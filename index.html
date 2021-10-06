@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GUID</title>
+</head>
+<style>
+    div {
+        background-color: white;
+        color: black;
+        height: 20px;
+        width: 640px;
+        text-align: center;
+        font-size: large;
+    }
+</style>
+
+<body>
+    <video controls autoplay width="640" height="480" id="knips">
+        <source src="knips.mp4" type="video/mp4" sizes="">
+        Your browser does not support the video tag.
+    </video>
+
+    <div id="guid" s></div>
+    <script>
+        var vid = document.getElementById("knips");
+        vid.addEventListener(
+            'play',
+            function () {
+                vid.play();
+            },
+            false);
+        vid.onclick = function () {
+            vid.play();
+        }
+        document.getElementById('knips').addEventListener('ended', create_UUID, false);
+
+        function create_UUID() {
+
+            var dt = new Date().getTime();
+            var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+                var r = (dt + Math.random() * 16) % 16 | 0;
+                dt = Math.floor(dt / 16);
+                return (c == 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+            });
+            document.getElementById("guid").innerHTML = uuid;
+        }
+        // function pauseVid() {
+        //   vid.pause(); 
+        // } 
+    </script>
+</body>
+
+</html>
