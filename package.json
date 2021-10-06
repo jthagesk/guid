@@ -1,0 +1,19 @@
+{
+  "name": "guid",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jthagesk/guid.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jthagesk/guid/issues"
+  },
+  "homepage": "https://github.com/jthagesk/guid#readme"
+}
